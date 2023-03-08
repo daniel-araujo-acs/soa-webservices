@@ -25,13 +25,31 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _ListarLivros_QNAME = new QName("http://servicos.estoque.knight.com/", "listarLivros");
+    private final static QName _ListarLivrosPaginacao_QNAME = new QName("http://servicos.estoque.knight.com/", "listarLivrosPaginacao");
     private final static QName _ListarLivrosResponse_QNAME = new QName("http://servicos.estoque.knight.com/", "listarLivrosResponse");
+    private final static QName _ListarLivrosPaginacaoResponse_QNAME = new QName("http://servicos.estoque.knight.com/", "listarLivrosPaginacaoResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.knight.estoque.servicos
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link Livro }
+     * 
+     */
+    public Livro createLivro() {
+        return new Livro();
+    }
+
+    /**
+     * Create an instance of {@link ListarLivrosPaginacao }
+     * 
+     */
+    public ListarLivrosPaginacao createListarLivrosPaginacao() {
+        return new ListarLivrosPaginacao();
     }
 
     /**
@@ -51,11 +69,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Livro }
+     * Create an instance of {@link ListarLivrosPaginacaoResponse }
      * 
      */
-    public Livro createLivro() {
-        return new Livro();
+    public ListarLivrosPaginacaoResponse createListarLivrosPaginacaoResponse() {
+        return new ListarLivrosPaginacaoResponse();
+    }
+
+    /**
+     * Create an instance of {@link Livro.Autores }
+     * 
+     */
+    public Livro.Autores createLivroAutores() {
+        return new Livro.Autores();
     }
 
     /**
@@ -68,12 +94,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListarLivrosPaginacao }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicos.estoque.knight.com/", name = "listarLivrosPaginacao")
+    public JAXBElement<ListarLivrosPaginacao> createListarLivrosPaginacao(ListarLivrosPaginacao value) {
+        return new JAXBElement<ListarLivrosPaginacao>(_ListarLivrosPaginacao_QNAME, ListarLivrosPaginacao.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ListarLivrosResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://servicos.estoque.knight.com/", name = "listarLivrosResponse")
     public JAXBElement<ListarLivrosResponse> createListarLivrosResponse(ListarLivrosResponse value) {
         return new JAXBElement<ListarLivrosResponse>(_ListarLivrosResponse_QNAME, ListarLivrosResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListarLivrosPaginacaoResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://servicos.estoque.knight.com/", name = "listarLivrosPaginacaoResponse")
+    public JAXBElement<ListarLivrosPaginacaoResponse> createListarLivrosPaginacaoResponse(ListarLivrosPaginacaoResponse value) {
+        return new JAXBElement<ListarLivrosPaginacaoResponse>(_ListarLivrosPaginacaoResponse_QNAME, ListarLivrosPaginacaoResponse.class, null, value);
     }
 
 }

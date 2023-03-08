@@ -33,4 +33,8 @@ public class LivroDAO {
         return this.livros;
     }
 
+    public List<Livro> listarLivros(Integer numeroDaPagina, Integer tamanhoDaPagina) {
+        // TODO: Implementar paginação
+        return this.livros;
+    }
 }
